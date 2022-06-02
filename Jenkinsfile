@@ -3,20 +3,13 @@ pipeline {
     agent any
     
     stages {
-        stage('Prepare Today Date') {
+        stage('Today DateTime') {
             steps {
                  script {
-                    def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")
-                    def date = new Date()
-                
-                    today = dateFormat.format(date)                
-                    
+                    def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")                
+                    today = dateFormat.format(new Date())                
+                    echo today
                 }                
-            } 
-        }
-        stage('Print Today Date') {
-            steps {
-                  echo today
             } 
         }
     }
