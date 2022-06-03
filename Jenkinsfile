@@ -1,14 +1,13 @@
 import java.text.SimpleDateFormat
 pipeline {
-    agent any
+    agent "demoAgent"
     
     stages {
         stage('Today DateTime') {
             steps {
                  script {
                     def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")                
-                    today = dateFormat.format(new Date())                
-                    echo today
+                    echo dateFormat.format(new Date())
                 }                
             } 
         }
