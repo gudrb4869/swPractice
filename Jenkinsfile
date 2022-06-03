@@ -1,9 +1,11 @@
 import java.text.SimpleDateFormat
 pipeline {
-    agent "demoAgent"
+    agent {
+        label "demoAgent"
+    }
     
     stages {
-        stage('Today DateTime') {
+        stage('Print') {
             steps {
                  script {
                     def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")                
