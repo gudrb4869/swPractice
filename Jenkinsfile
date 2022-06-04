@@ -7,8 +7,10 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")                
-                echo dateFormat.format(new Date())
+                script {
+                    def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")                
+                    echo dateFormat.format(new Date())
+                }
             }
         }
     }
