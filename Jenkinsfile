@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat
 pipeline {
     agent {
         label "demoAgent"
@@ -6,7 +7,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")                
+                echo dateFormat.format(new Date())
             }
         }
     }
