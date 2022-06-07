@@ -7,7 +7,7 @@ pipeline {
         stage('Hello') {
             steps {
                 script {
-                    echo "Hello World"
+                    echo "202206071401"
                 }
             }
         }
